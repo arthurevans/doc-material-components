@@ -65,17 +65,17 @@ import '@material/mwc-icon-button-toggle';
 
 ### Add an icon to `mwc-button`
 
-
 Add an icon to your `mwc-button` instance using the following steps:
 
 1. In your HTML file, reference the icon font library you would like to use (we recommend the [Material Icons](https://material.io/tools/icons/) from Google Fonts):
-    ```HTML
+    ```html
     <head>
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     </head>
     ```
-1.  If you're using a an icon font other than the default Material Icons, 
+1.  If you're using a an icon font other than the default Material Icons, set the `--mdc-icon-font` property.
 
+    ```html
     <style>
     html {
       --mdc-icon-font: 'My Icon Font';
@@ -156,9 +156,9 @@ A text button has a text label, a transparent container and an optional icon.
 
 #### Text label attributes
 
-Design Attribute | Theme value | HTML attribute | CSS property
----|---|---
-Text label | N/A | `label` | N/A
+Design Attribute | Theme value | HTML attribute | CSS property 
+---|---|---|---
+Text label | N/A | `label` | N/A 
 Text color | Primary color | N/A | None (can override `--mdc-theme-primary`)
 Typography | Default button text style | `--mdc-typography-font-family`, `--mdc-typography-button-*`
 
@@ -174,9 +174,9 @@ Ripple color | Primary color at 16% opacity | None (can override `--mdc-theme-pr
 
 
  Design Attribute | Theme value | HTML attribnute | CSS property
----|---|---
+---|---|---|---
  Icon | N/A | `icon` | N/A
-Icon color | Primary color | None (can override `--mdc-theme-primary`)
+Icon color | Primary color | N/A | None (can override `--mdc-theme-primary`)
 
 
 ## Outlined button
@@ -224,10 +224,10 @@ An outline button has text, a container, and an optional icon.
 #### Text label attributes
 
 Design Attribute | Theme value | HTML attribute | CSS property
----|---|---
+---|---|---|---
 Text label | N/A | `label` | N/A
 Text color | Primary color | N/A | None (can override `--mdc-theme-primary`)
-Typography | Default button text style | `--mdc-typography-font-family`, `--mdc-typography-button-*`
+Typography | Default button text style | N/A | `--mdc-typography-font-family`, `--mdc-typography-button-*`
 
 For details on the available typography properties, see [Typography properties](../theming#typography-properties) in the Theming guide.
 
@@ -248,13 +248,11 @@ Currently `mwc-button` defaults to the primary color for outlines.
 #### Icon attributes
 
  Design Attribute | Theme value | HTML attribnute | CSS property
----|---|---
+---|---|---|---
  Icon | N/A | `icon` | N/A
 Icon color | Primary color | N/A | None (can override `--mdc-theme-primary`)
 
 We recommend using [Material Theming](https://material.io/components/buttons/#theming) to apply your customizations across your application. For a full list of component properties, go to the [`mwc-button` API doc]().
-
-
 
 ## Contained button
 
@@ -262,12 +260,13 @@ We recommend using [Material Theming](https://material.io/components/buttons/#th
 
 #### Contained button example
 
-Source code & API:
+API and source code:
 
 * `mwc-button`
-    * [GitHub source](https://github.com/material-components/material-components-web-components/tree/master/packages/button/src)
     * [API](https://github.com/material-components/material-components-web-components/blob/master/packages/button/README.md)
-    * [Demo site](https://glitch.com/~many-witty-chihuahuas)
+    * [Demo](https://glitch.com/~many-witty-chihuahuas)
+    * [Source code](https://github.com/material-components/material-components-web-components/tree/master/packages/button/src)
+
 
 <img src="assets/web-contained-button.png" alt="Contained button example">
 
@@ -318,9 +317,9 @@ Horzontal padding | 16px | `--mdc-button-horizontal-padding`
 #### Icon attributes
 
  Design Attribute | Theme value | HTML attribute | CSS Property
----|---|---
+---|---|---|---
 Icon | N/A | `icon` | N/A
-Icon color | On-primary color | None (can override `--mdc-theme-on-primary`)
+Icon color | On-primary color | N/A | None (can override `--mdc-theme-on-primary`)
 
 
 We recommend using [Material Theming](https://material.io/components/buttons/#theming) to apply your customizations across your application. For a full list of component properties, go to the [contained button API doc]()
@@ -345,12 +344,13 @@ Icons can be used as toggle buttons when they allow selection, or deselection, o
 
 #### Toggle icon button example with background images
 
-Source code and API:
+API and source code:
 
 * `mwc-icon-button-toggle`
-    * [GitHub source](https://github.com/material-components/material-components-web-components/tree/master/packages/icon-button-toggle/src)
     * [API](https://github.com/material-components/material-components-web-components/blob/master/packages/icon-button-toggle/README.md)
-    * [Demo site](https://glitch.com/~many-witty-chihuahuas)
+    * [Demo](https://glitch.com/~many-witty-chihuahuas)
+    * [Source code](https://github.com/material-components/material-components-web-components/tree/master/packages/icon-button-toggle/src)
+
 
 <img src="assets/web-toggle-icon-button.png" alt="4 images arranged in a 2 by 2 array, each image with a favorite icon in the upper-right corner" width="50%">
 
@@ -404,10 +404,13 @@ The icon button consists of two icons for 'on' and 'off'.
 1. Icon
 
  Design Attribute | Theme value | HTML attribute | CSS Property
----|---|---
+---|---|---|---
 On icon | N/A | `onIcon` | N/A
 Off icon | N/A | `offIcon` | N/A
 Icon color | Black | N/A | `color`
+
+<!-- In theory I think the icon color _should_ be the on-surface color, but AFAICT 
+     it is not controlled by any theme property -->
 
 We recommend using [Material Theming](https://material.io/components/buttons/#theming) to apply your customizations across your application. For a full list of component properties, go to the [Icon button toggle API doc](https://github.com/material-components/material-components-web-components/blob/master/packages/icon-button-toggle/README.md).
 
@@ -417,17 +420,18 @@ We recommend using [Material Theming](https://material.io/components/buttons/#th
 API and source code:
 
 * `mwc-button`
-    * [GitHub source](https://github.com/material-components/material-components-web-components/tree/master/packages/button/src)
+
     * [API](https://github.com/material-components/material-components-web-components/blob/master/packages/button/README.md)
+    * [Source code](https://github.com/material-components/material-components-web-components/tree/master/packages/button/src)
 
 
-The following example shows text, outlined and contained button types with Material Theming.
+The following example shows text, outlined and contained button types styled to match the [Shrine theme](https://material.io/design/material-studies/shrine.html).
 
 !["Button theming with three buttons - text, outlined and contained - with shrine theming."](assets/button-theming.png)
 
 #### Implementing button theming
 
-[Shrine theme](https://material.io/design/material-studies/shrine.html)
+This example uses the colors and font family defined by the [Shrine theme](https://material.io/design/material-studies/shrine.html).
 
 ```css
 html {
